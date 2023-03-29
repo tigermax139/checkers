@@ -39,7 +39,7 @@ class Cell {
     }
 
     toString() {
-        return this.isLocked ? 'white' : 'black';
+        return this.isLocked ? SIDE.WHITE : SIDE.BLACK;
     }
 }
 
@@ -60,7 +60,7 @@ class CheckersGame extends Game {
 
             for (let y = 0; y < size; y++) {
                 const isLocked = (y + x + 1) % 2;
-                const side = x < size / 2 ? SIDE.WHITE : SIDE.WHITE;
+                const side = x < size / 2 ? SIDE.WHITE : SIDE.BLACK;
                 // todo make generic
                 const hasChess = [0, 1, 2, 5, 6, 7].includes(x) && !isLocked;
 
